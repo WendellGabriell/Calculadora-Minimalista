@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Minimalista</title>
+    <link rel="stylesheet" href="calculadora_minimalista.css">
+</head>
+<body>
+    <div id="themeSwitchContainer" style="position: fixed; top: 32px; right: 32px; z-index: 10;">
+        <label class="switch">
+            <input type="checkbox" id="toggleTheme">
+            <span class="slider">
+                <span class="icon moon">&#x1F311;</span>
+                <span class="icon sun">&#x2600;</span>
+            </span>
+        </label>
+    </div>
+    <div class="calc-container" id="calcContainer">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button class="op" onclick="press('/')">÷</button>
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button class="op" onclick="press('*')">×</button>
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button class="op" onclick="press('-')">−</button>
+            <button onclick="press('0')">0</button>
+            <button onclick="press('.')">.</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="op" onclick="press('+')">+</button>
+            <button class="eq" style="grid-column: span 4;" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script src="calculadora_minimalista.js"></script>
+    <script>
+    const toggleTheme = document.getElementById('toggleTheme');
+    toggleTheme.addEventListener('change', function() {
+        if (toggleTheme.checked) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+    });
+    </script>
+</body>
+</html>
